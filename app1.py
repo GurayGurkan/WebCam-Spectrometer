@@ -42,6 +42,7 @@ class myApp(QMainWindow,gui_1.Ui_MainWindow):
         self.sliderGain.valueChanged.connect(self.changeGain)
         self.sliderContr.valueChanged.connect(self.changeContr)
         self.sliderBrigh.valueChanged.connect(self.changeBrigh)
+        self.sliderWB.valueChanged.connect(self.changeWB)
         
         
        
@@ -70,6 +71,7 @@ class myApp(QMainWindow,gui_1.Ui_MainWindow):
         self.vid_obj.release()
         self.cam_image.hide()
         self.row.hide()
+
   
     
     def updateImage(self):
@@ -103,6 +105,9 @@ class myApp(QMainWindow,gui_1.Ui_MainWindow):
     def changeContr(self,val):
         if self.vid_obj:
             self.vid_obj.set(cv.CV_CAP_PROP_CONTRAST,val)
+    def changeWB(self,val):
+        if self.vid_obj:
+            self.vid_obj.set(17,val)
         
         
         
