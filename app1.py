@@ -12,6 +12,7 @@ import gui_1
 import pyqtgraph as pg
 import numpy as np
 from cv2 import *
+# RGB2GRAY may be replaced by direct summation through RGB! 05.02.2018
 
 class myApp(QMainWindow,gui_1.Ui_MainWindow):
     def __init__(self,parent=None):
